@@ -39,3 +39,29 @@ git add
 git commit -m
 git fatch
 git push
+
+//  撤销commit
+git add . //添加所有文件
+
+git commit -m "本功能全部完成"
+
+git reset --soft HEAD^
+git reset --soft HEAD~1
+git reset --soft HEAD~2
+
+// 撤销 add ./ 并且撤销 commit
+ git  reset --mixed HEAD^ 和--soft一样
+
+// git commit --amend  // 修改commit 的注释
+
+
+-------强行提交  以本地覆盖终端
+$ git push -u origin master -f  
+  如果报错
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Merge the remote changes (e.g. 'git pull')
+hint: before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+可以用 git remote add origin‘url’来解决
+让后再 git push -u origin master -f 
+ 
